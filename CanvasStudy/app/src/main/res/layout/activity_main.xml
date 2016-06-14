@@ -10,15 +10,16 @@
         android:id="@+id/change_style_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="change style" />
+        android:text="擦除" />
 
     <Button
         android:id="@+id/change_style_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="change style" />
+        android:text="画笔" />
 
     <com.canvasstudy.customviews.DrawBoard
+        android:background="#fff"
         android:id="@+id/drawboard"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

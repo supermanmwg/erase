@@ -42,18 +42,19 @@ public class DrawBoard extends View {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(10);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+
+        mPaint.setStrokeWidth(5);
         mPath = new Path();
 
         mPaint2 = new Paint();
         mPaint2.setAntiAlias(true);
-       // mPaint2.setAlpha(0);
-      //  mPaint2.setColor(Color.WHITE);
-        mPaint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST));
+        mPaint2.setColor(Color.WHITE);
         mPaint2.setStyle(Paint.Style.STROKE);
         mPaint2.setStrokeWidth(30);
         mPath2 = new Path();
-        mBitmap = Bitmap.createBitmap(400, 600, Bitmap.Config.ARGB_8888);
+        mBitmap = Bitmap.createBitmap(800, 1000, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
 
     }
@@ -72,8 +73,10 @@ public class DrawBoard extends View {
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 if(style == 1) {
+                    mPath.reset();
                     mPath.moveTo(x, y);
                 } else {
+                    mPath2.reset();
                     mPath2.moveTo(x,y);
                 }
                 break;
